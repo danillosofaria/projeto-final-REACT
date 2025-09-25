@@ -25,20 +25,28 @@ async function fetchFromAPI(endpoint) {
 }
 
 
-export async function getPopularMovies(page = 1) {
-  return fetchFromAPI(`/movie/popular?language=pt-BR&page=${page}`);
+export async function getPopularMovies() {
+  return fetchFromAPI(`/movie/popular`);
 }
 
-export async function getPopularTV(page = 1) {
-  return fetchFromAPI(`/tv/popular?language=pt-BR&page=${page}`);
+export async function getTopRatedMovies() {
+  return fetchFromAPI(`/movie/top_rated`);
+}
+
+export async function getNowPlayingMovies() {
+  return fetchFromAPI(`/movie/now_playing`);
+}
+
+export async function getPopularTV() {
+  return fetchFromAPI(`/tv/popular`);
 }
 
 export async function getMovieDetails(id) {
-  return fetchFromAPI(`/movie/${id}?language=pt-BR`);
+  return fetchFromAPI(`/movie/${id}`);
 }
 
 export async function getTVDetails(id) {
-  return fetchFromAPI(`/tv/${id}?language=pt-BR`);
+  return fetchFromAPI(`/tv/${id}`);
 }
 
 export async function searchMulti(query, page = 1) {
