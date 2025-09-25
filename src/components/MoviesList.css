@@ -1,0 +1,11 @@
+.movie-list-container {
+  margin: 0 40px;
+  padding-bottom: 2rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
