@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import CardMovie from "./CardMovie";
 import "./MediaRow.css";
 
-function MediaRow({ title, fetchFunction }) {
+function MediaRow({ title, fetchFunction, type = "movie" }) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ function MediaRow({ title, fetchFunction }) {
         const data = await fetchFunction();
         setItems(data.results || []);
       } catch (error) {
-        console.error("Erro ao buscar dados:", error);
+        console.error(error);
       }
     }
     fetchData();
@@ -24,12 +24,16 @@ function MediaRow({ title, fetchFunction }) {
         {items.map((item) => (
           <CardMovie
             key={item.id}
-            title={item.title || item.name} 
+            id={item.id}
+            title={type === "movie" ? item.title : item.name}
             year={
-              (item.release_date || item.first_air_date)?.slice(0, 4)
+              type === "movie"
+                ? item.release_date?.slice(0, 4)
+                : item.first_air_date?.slice(0, 4)
             }
             rating={item.vote_average}
             image={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+            type={type} // <- importante para o link
           />
         ))}
       </div>

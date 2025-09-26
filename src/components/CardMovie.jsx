@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import "./CardMovie.css";
 
-function CardMovie({ id, title, year, rating, image }) {
+function CardMovie({ id, title, year, rating, image, type = "movie" }) {
+  // Função para renderizar as estrelas baseado na nota
   const renderStars = () => {
     const stars = [];
-    const fullStars = Math.floor(rating / 2); // converte nota 0-10 em 0-5 estrelas
+    const fullStars = Math.floor(rating / 2); // nota 0-10 para 0-5 estrelas
     const halfStar = rating % 2 >= 1 ? 1 : 0;
 
     for (let i = 0; i < fullStars; i++) {
@@ -16,12 +17,14 @@ function CardMovie({ id, title, year, rating, image }) {
     while (stars.length < 5) {
       stars.push(<span key={`empty-${stars.length}`} className="star empty">★</span>);
     }
-
     return stars;
   };
 
   return (
-    <Link to={`/details/${id}`} style={{ textDecoration: "none", color: "inherit" }}>
+    <Link 
+      to={`/details/${type}/${id}`} 
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
       <div className="card-item">
         <img src={image} alt={title} className="poster" />
         <h3>{title}</h3>

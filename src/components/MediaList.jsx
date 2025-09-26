@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import CardMovie from "./CardMovie";
 import "./Movieslist.css";
 
-function MediaList({ title, fetchFunction}) {
+function MediaList({ title, fetchFunction, type = "movie" }) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -25,10 +25,15 @@ function MediaList({ title, fetchFunction}) {
           <CardMovie
             key={item.id}
             id={item.id}
-            title={item.title || item.name}
-            year={(item.release_date || item.first_air_date)?.slice(0, 4)}
+            title={type === "movie" ? item.title : item.name}
+            year={
+              type === "movie"
+                ? item.release_date?.slice(0, 4)
+                : item.first_air_date?.slice(0, 4)
+            }
             rating={item.vote_average}
             image={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
+            type={type} // importante para o link
           />
         ))}
       </div>

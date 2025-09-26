@@ -4,20 +4,25 @@ import MediaHero from "../components/MediaHero";
 import { getMovieDetails, getTVDetails } from "../services/api.js";
 
 function MediaDetail() {
-  const { id } = useParams();
+  const { id, type } = useParams(); // <- pega type também
   const [item, setItem] = useState(null);
 
   useEffect(() => {
     async function fetchDetails() {
-      if (!id) return;
-      let data = await getMovieDetails(id);
-      if (!data) data = await getTVDetails(id);
+      if (!id || !type) return;
+
+      let data = null;
+      if (type === "movie") {
+        data = await getMovieDetails(id);
+      } else if (type === "tv") {
+        data = await getTVDetails(id);
+      }
 
       setItem(data);
     }
 
     fetchDetails();
-  }, [id]);
+  }, [id, type]);
 
   if (!item) return <p>Carregando...</p>;
 
