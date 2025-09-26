@@ -1,0 +1,14 @@
+.media-detail .media-hero .hero-content .media-poster img {
+  width: 100%;
+  display: block;
+}
+
+.media-hero {
+  height: 70vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 5% 5%;
+}

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import CardMovie from "./CardMovie";
-import "./Movieslist.css";
+import "./MediaRow.css";
 
-function MediaList({ title, fetchFunction}) {
+function MediaRow({ title, fetchFunction }) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -18,15 +18,16 @@ function MediaList({ title, fetchFunction}) {
   }, [fetchFunction]);
 
   return (
-    <div className="movie-list-container">
+    <div className="media-row-container">
       <h2>{title}</h2>
-      <div className="cards-grid">
+      <div className="media-row">
         {items.map((item) => (
           <CardMovie
             key={item.id}
-            id={item.id}
-            title={item.title || item.name}
-            year={(item.release_date || item.first_air_date)?.slice(0, 4)}
+            title={item.title || item.name} 
+            year={
+              (item.release_date || item.first_air_date)?.slice(0, 4)
+            }
             rating={item.vote_average}
             image={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
           />
@@ -36,4 +37,4 @@ function MediaList({ title, fetchFunction}) {
   );
 }
 
-export default MediaList;
+export default MediaRow;
