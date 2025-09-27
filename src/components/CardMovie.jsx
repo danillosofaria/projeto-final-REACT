@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import "./CardMovie.css";
 
 function CardMovie({ id, title, year, rating, image, type = "movie" }) {
-  // Função para renderizar as estrelas baseado na nota
+
   const renderStars = () => {
     const stars = [];
-    const fullStars = Math.floor(rating / 2); // nota 0-10 para 0-5 estrelas
+    const fullStars = Math.floor(rating / 2);
     const halfStar = rating % 2 >= 1 ? 1 : 0;
 
     for (let i = 0; i < fullStars; i++) {

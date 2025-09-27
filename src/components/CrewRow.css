@@ -1,0 +1,25 @@
+.crew-row-container {
+  margin: 2rem 0;
+}
+
+.crew-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+.crew-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.crew-row::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.crew-row::-webkit-scrollbar-track {
+  background: transparent;
+}

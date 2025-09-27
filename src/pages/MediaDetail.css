@@ -1,0 +1,25 @@
+.media-detail-page {
+  display: flex;
+  flex-direction: column;
+  padding-top: 86px;
+}
+
+.media-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 5%;
+}
+
+.overview {
+  max-width: 800px;
+}
+
+.overview h2 {
+  font-size: 1.8rem;
+}
+
+.overview p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}

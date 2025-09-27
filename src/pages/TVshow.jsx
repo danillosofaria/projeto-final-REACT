@@ -1,13 +1,14 @@
-import MediaList from "../components/MediaList"; // <- necessário importar
+import MediaList from "../components/MediaList";
 import MediaRow from "../components/MediaRow";
-import { getPopularTV } from "../services/api";
+import { getAiringTodayTV, getPopularTV, getTopRatedTV } from "../services/api";
 import "./Homepage.css";
 
 function TVshow() {
   return (
     <div className="HomePage">
-      <MediaRow title="serie" type="tv" fetchFunction={getPopularTV} />
-      <MediaList title="Popular tv" type="tv" fetchFunction={getPopularTV} />
+      <MediaList title="Popular tv show" type="tv" fetchFunction={getPopularTV} />
+      <MediaRow title="Top Rated" type="tv" fetchFunction={getTopRatedTV} />
+      <MediaRow title="Airing Today" type="tv" fetchFunction={getAiringTodayTV} />
     </div>
   );
 }

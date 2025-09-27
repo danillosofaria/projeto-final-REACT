@@ -1,8 +1,7 @@
-
 const API_URL = "https://api.themoviedb.org/3";
 
-
-const API_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYWZhMGY4ZTExMTI1ODNkMGEzYWNlOWI0OWE4NTlmYyIsIm5iZiI6MTc1ODgwODcxMC4wMjIsInN1YiI6IjY4ZDU0YTg2Y2ZhMzk5YTdhMzg4NDY1NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hELO-8TSNVstIqPQ_p02v3DOql5_GNN725CyjYOLt0k";
+const API_TOKEN =
+  "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYWZhMGY4ZTExMTI1ODNkMGEzYWNlOWI0OWE4NTlmYyIsIm5iZiI6MTc1ODgwODcxMC4wMjIsInN1YiI6IjY4ZDU0YTg2Y2ZhMzk5YTdhMzg4NDY1NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hELO-8TSNVstIqPQ_p02v3DOql5_GNN725CyjYOLt0k";
 
 const options = {
   method: "GET",
@@ -11,7 +10,6 @@ const options = {
     Authorization: `Bearer ${API_TOKEN}`,
   },
 };
-
 
 async function fetchFromAPI(endpoint) {
   try {
@@ -23,7 +21,6 @@ async function fetchFromAPI(endpoint) {
     return null;
   }
 }
-
 
 export async function getPopularMovies() {
   return fetchFromAPI(`/movie/popular`);
@@ -37,18 +34,40 @@ export async function getNowPlayingMovies() {
   return fetchFromAPI(`/movie/now_playing`);
 }
 
+export async function getUpcomingMovies() {
+  return fetchFromAPI(`/movie/upcoming`);
+}
+
 export async function getPopularTV() {
   return fetchFromAPI(`/tv/popular`);
 }
 
+export async function getTopRatedTV() {
+  return fetchFromAPI(`/tv/top_rated`);
+}
+
+export async function getAiringTodayTV() {
+  return fetchFromAPI(`/tv/airing_today`);
+}
+
 export async function getMovieDetails(id) {
-  return fetchFromAPI(`/movie/${id}`);
+  return fetchFromAPI(`/movie/${id}?append_to_response=credits`);
 }
 
 export async function getTVDetails(id) {
-  return fetchFromAPI(`/tv/${id}`);
+  return fetchFromAPI(`/tv/${id}?append_to_response=credits`);
 }
 
 export async function searchMulti(query, page = 1) {
-  return fetchFromAPI(`/search/multi?language=pt-BR&query=${encodeURIComponent(query)}&page=${page}`);
+  return fetchFromAPI(
+    `/search/multi?language=pt-BR&query=${encodeURIComponent(query)}&page=${page}`
+  );
+}
+
+export async function getSimilarMovies(id) {
+  return fetchFromAPI(`/movie/${id}/similar`);
+}
+
+export async function getSimilarTV(id) {
+  return fetchFromAPI(`/tv/${id}/similar`);
 }

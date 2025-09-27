@@ -1,14 +1,59 @@
-.media-detail .media-hero .hero-content .media-poster img {
-  width: 100%;
-  display: block;
-}
-
 .media-hero {
-  height: 70vh;
   min-height: 500px;
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: flex-end;
-  padding: 0 5% 5%;
+}
+
+.hero-content {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto 5%;
+}
+
+.media-poster {
+  width: 300px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  height: fit-content;
+  box-shadow: 0 10px 20px #00000080;
+}
+
+.media-info {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.meta-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.rating {
+  color: #f5c518;
+  font-weight: 700;
+}
+
+.media-info h1 {
+  font-size: 3rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.genres {
+      display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.genre-tag{
+      background: #fff3;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: .9rem;
 }

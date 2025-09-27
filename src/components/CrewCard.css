@@ -1,0 +1,18 @@
+.crew-card {
+  width: 150px;
+  flex-shrink: 0;
+  text-align: center;
+  margin: 5px 0 0;
+  border-radius: 8px;
+}
+
+.crew-card h3 {
+  font-size: 1rem;
+    margin: 5px 0 0;
+}
+
+.crew-card p {
+  margin: 5px 0 0;
+  color: #aaa;
+  font-size: 0.9rem;
+}

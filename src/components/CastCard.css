@@ -1,0 +1,25 @@
+.cast-card .cast-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #333;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.cast-card p {
+  margin: 5px 0 0;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.cast-card {
+
+  max-width: 150px;
+  text-align: center;
+}
+
+.cast-card h3 {
+  margin: 5px 0 0;
+  font-size: 1rem;
+}

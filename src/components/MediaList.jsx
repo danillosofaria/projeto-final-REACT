@@ -33,7 +33,7 @@ function MediaList({ title, fetchFunction, type = "movie" }) {
             }
             rating={item.vote_average}
             image={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-            type={type} // importante para o link
+            type={type}
           />
         ))}
       </div>
