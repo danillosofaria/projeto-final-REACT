@@ -46,14 +46,50 @@
 }
 
 .genres {
-      display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.genre-tag{
-      background: #fff3;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: .9rem;
+.genre-tag {
+  background: #fff3;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5% 5%;
+    padding-top: 100px;
+    margin: 0;
+  }
+
+  .media-poster {
+    width: 30%;
+    height: auto;
+  }
+
+  .media-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .media-info h1 {
+    font-size: 2rem;
+  }
+
+  .meta-info {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .genres {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
 }

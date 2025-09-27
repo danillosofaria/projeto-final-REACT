@@ -2,34 +2,26 @@ import { Link } from "react-router-dom";
 import "./CardMovie.css";
 
 function CardMovie({ id, title, year, rating, image, type = "movie" }) {
-
-  const renderStars = () => {
-    const stars = [];
-    const fullStars = Math.floor(rating / 2);
-    const halfStar = rating % 2 >= 1 ? 1 : 0;
-
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(<span key={i} className="star full">★</span>);
-    }
-    if (halfStar) {
-      stars.push(<span key="half" className="star half">★</span>);
-    }
-    while (stars.length < 5) {
-      stars.push(<span key={`empty-${stars.length}`} className="star empty">★</span>);
-    }
-    return stars;
-  };
+  const starPercentage = (rating / 10) * 100;
 
   return (
-    <Link 
-      to={`/details/${type}/${id}`} 
+    <Link
+      to={`/details/${type}/${id}`}
       style={{ textDecoration: "none", color: "inherit" }}
     >
       <div className="card-item">
         <img src={image} alt={title} className="poster" />
         <h3>{title}</h3>
         <p>{year}</p>
-        <div className="star-rating">{renderStars()}</div>
+
+        <div className="star-rating">
+          <div className="stars-outer">
+            <div
+              className="stars-inner"
+              style={{ width: `${starPercentage}%` }}
+            ></div>
+          </div>
+        </div>
       </div>
     </Link>
   );

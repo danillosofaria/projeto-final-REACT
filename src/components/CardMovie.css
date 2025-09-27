@@ -32,3 +32,36 @@
   font-size: 0.9rem;
   color: #efe2e2;
 }
+
+.star-rating {
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+.stars-outer {
+  position: relative;
+  display: inline-block;
+  letter-spacing: 2px;
+  color: #ccc;
+}
+
+.stars-outer::before {
+  content: "★★★★★";
+  display: block;
+}
+
+.stars-inner {
+  position: absolute;
+  letter-spacing: 2px;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  color: #f5c518;
+}
+
+.stars-inner::before {
+  content: "★★★★★";
+  display: block;
+}
