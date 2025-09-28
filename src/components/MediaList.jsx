@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CardMovie from "./CardMovie";
-import "./Movieslist.css";
+import "./MoviesList.css";
 
 function MediaList({ title, fetchFunction, type = "movie" }) {
   const [items, setItems] = useState([]);
