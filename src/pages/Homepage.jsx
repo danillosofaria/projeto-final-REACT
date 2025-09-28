@@ -4,7 +4,6 @@ import {
   getAiringTodayTV,
   getNowPlayingMovies,
   getPopularMovies,
-  getPopularTV,
   getTopRatedMovies
 } from "../services/api";
 import "./Homepage.css";
