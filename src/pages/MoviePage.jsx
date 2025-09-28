@@ -8,7 +8,7 @@ import {
 } from "../services/api";
 import "./Homepage.css";
 
-function HomePage() {
+function MoviePage() {
   return (
     <div className="HomePage">
       <MediaList title="Popular Movies" type="movie" fetchFunction={getPopularMovies} />
@@ -19,4 +19,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default MoviePage;
