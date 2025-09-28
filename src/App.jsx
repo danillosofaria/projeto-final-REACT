@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import TVshow from "./pages/Tvshow";
+import TVshow from "./pages/TVshow";
 import MediaDetail from "./pages/MediaDetail";
 import HomePage from "./pages/HomePage";
 
